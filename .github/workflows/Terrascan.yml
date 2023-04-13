@@ -33,18 +33,6 @@ jobs:
          policy_type: 'aws'
          only_warn: true
          
-      - name: terrascan-init
-        run: 
-           terrascan init
-      - name: terrascan-scan
-        run: 
-           terrascan scan 
-       
-       
-           
-     
-
-
       - name: Terraform HasiCorp SetUp
         uses: hashicorp/setup-terraform@v2
         with:
