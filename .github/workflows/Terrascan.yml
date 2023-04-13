@@ -38,7 +38,7 @@ jobs:
            terrascan init
       - name: terrascan-scan
         run: 
-           terrascan scan -t aws
+           terrascan scan 
        
        
            
