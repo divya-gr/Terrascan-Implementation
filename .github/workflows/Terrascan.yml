@@ -11,6 +11,8 @@ jobs:
     name: terraform 
     runs-on: ubuntu-latest
     
+    
+    
     defaults:
       run:
         working-directory: ./example
@@ -25,6 +27,11 @@ jobs:
         continue-on-error: true
       - name: Terrascan IaC scanner
         uses: tenable/terrascan-action@v1.4.1
+        with:
+         iac_type: 'terraform'
+         iac_version: 'v14'
+         policy_type: 'aws'
+         only_warn: true
 
 
       - name: Terraform HasiCorp SetUp
