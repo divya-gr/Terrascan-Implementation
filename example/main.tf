@@ -3,6 +3,6 @@ module "ec2_ins"{
     name = var.ins_type
 }
 module "s3_bucket"{
-    source = "../s3"
+    source = "../S3"
     bucket_name  = var.ins_type2
 }
