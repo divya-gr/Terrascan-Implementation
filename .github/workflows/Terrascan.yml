@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Terrascan IaC scanner
-        uses: tenable/terrascan-action@v1.4.1
+#       - name: Terrascan IaC scanner
+#         uses: tenable/terrascan-action@v1.4.1
 
 
       - name: Terraform HasiCorp SetUp
@@ -27,29 +27,29 @@ jobs:
         with:
           terraform_version: 1.1.7
 
-#       - name: AWS Credentials Configuration
-#         uses: aws-actions/configure-aws-credentials@v1
-#         with:
-#           aws-region: ${{ env.aws-region }}
-#           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#           aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
+      - name: AWS Credentials Configuration
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: ${{ env.aws-region }}
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }}
       
-#       - name: terraform format
-#         run: 
-#           terraform fmt
+      - name: terraform format
+        run: 
+          terraform fmt
       
-#       - name: terraform init
-#         run: 
-#           terraform init 
+      - name: terraform init
+        run: 
+          terraform init 
 
-#       - name: terraform validate
-#         run: 
-#           terraform validate
+      - name: terraform validate
+        run: 
+          terraform validate
 
-#       - name: terraform plan
-#         run: 
-#           terraform plan
+      - name: terraform plan
+        run: 
+          terraform plan
 
 #       - name: terraform apply
 #         run: 
